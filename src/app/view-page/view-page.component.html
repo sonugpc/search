@@ -1,0 +1,189 @@
+<!-- ng serve -->
+<div style="display: block;text-align: center;">
+  <img #mg height="100px" width="300px" src="https://www.celebaltech.com/assets/assets/img/celebal.webp" />
+</div>
+<svg class="blob-svg" width="700" height="600" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg"
+  filter="url(#blob-filter)">
+  <defs>
+    <filter id="blob-filter">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+      <feBlend in="SourceGraphic" in2="goo" />
+    </filter>
+    <mask id="blob-mask">
+      <ellipse class="ellipse1"></ellipse>
+      <ellipse class="ellipse2"></ellipse>
+      <circle class="circle1"></circle>
+      <circle class="circle2"></circle>
+      <circle class="circle3"></circle>
+      <circle class="circle4"></circle>
+    </mask>
+    <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse"
+      gradientTransform="matrix(-440.643 439.505 -439.505 -440.643 762.505 247.708)">
+      <stop offset="0.2" stop-color="#FF5DE5" />
+      <stop offset="1" stop-color="#177DFF" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="600" height="600" mask="url(#blob-mask)" fill="url(#gradient)" />
+</svg>
+<div #div class="center">
+  <form #f="ngForm" (ngSubmit)="onSearch(f)" style="position: relative;">
+    <ion-item lines=none class="item1">
+      <ion-input [(ngModel)]="searchQuery" name="searchQuery" style="font-size: 20px;" placeholder=Search color=primary>
+      </ion-input>
+      <ion-button type="submit" shape="round" fill=clear size="default">
+        <ion-icon *ngIf="!btnClicked" tooltip="Submit" slot="icon-only" placement="top" show-delay="500" name="search"
+          color="primary"></ion-icon>
+        <ion-spinner *ngIf="btnClicked" color=primary name="dots"></ion-spinner>
+
+      </ion-button>
+
+    </ion-item>
+
+  </form>
+</div>
+<div *ngIf="vs.sm==null&&btnClicked" class="mt-2 container">
+
+  <div class="row">
+    <div class="col col-4">
+      <ion-skeleton-text *ngFor="let i of [1,1,1]" animated style="height:30hv;width: 90%"></ion-skeleton-text>
+      <ion-skeleton-text *ngFor="let i of [1,1,1]" animated style="height:30hv;width: 90%"></ion-skeleton-text>
+      <ion-skeleton-text *ngFor="let i of [1,1,1]" animated style="height:30hv;width: 90%"></ion-skeleton-text>
+      <ion-skeleton-text *ngFor="let i of [1,1,1]" animated style="height:30hv;width: 90%"></ion-skeleton-text>
+
+    </div>
+
+    <div class="col col-8">
+      <ion-skeleton-text *ngFor="let i of [1,1,1]" animated style="height:30vh;width: 90%"></ion-skeleton-text>
+
+    </div>
+  </div>
+
+</div>
+<div style="    position: relative;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;">
+  <ng-lottie *ngIf="vs.sm!=null&&vs.sm.value.length==0" width="300px" height="400px" containerClass="moving-box lot"
+    [options]="options"></ng-lottie>
+</div>
+<div *ngIf="vs.sm!=null&&vs.sm.value.length>0" class=" mt-2 container">
+  <div class="row">
+    <div class="col-4">
+      <ion-card style="overflow-x: hidden;" class=" bg-light shadow entries scroll1 vert">
+        <ion-item class="d-flex ent_head">
+          <h3 class="heading">Locations</h3>
+          <!-- <ion-icon size="large" color="primary" class=" icon float-right" name="pin-outline"></ion-icon> -->
+          <ion-checkbox slot='end' mode=ios [(ngModel)]="location" (ionChange)="onChangeBox('location',$event)"></ion-checkbox>
+          <div class="blob">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" id="blobSvg">
+              <defs>
+                <linearGradient id="gradient2" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color:  #fc4a1a;"></stop>
+                  <stop offset="100%" style="stop-color: #fc4a1a;"></stop>
+                </linearGradient>
+              </defs>
+              <path id="blob" d="M419,299Q402,348,369,393.5Q336,439,277.5,451.5Q219,464,176,424.5Q133,385,104,343Q75,301,47,241.5Q19,182,64,134.5Q109,87,164.5,65Q220,43,282.5,43Q345,43,382.5,92Q420,141,428,195.5Q436,250,419,299Z" fill="url(#gradient2)"></path>
+            </svg>
+          </div>
+        </ion-item>
+        <ion-card-content style="padding-left: 1px;" class=" mt-2 ">
+          <div *ngFor="let i of vs.sm.value">
+            <div style="border-color: #fc4a1a;" class="list_ent mb-2 mt-2 pl-3 pd-4 shadow-sm" *ngFor="let i of i.locations">
+              {{i}}
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+
+      <ion-card style="overflow-x: hidden;" class=" bg-light shadow entries scroll1 vert">
+        <ion-item class="d-flex ent_head">
+          <h3 class="heading">People</h3>
+          <!-- <ion-icon size="large" color="primary" class=" icon float-right" name="person-outline"></ion-icon> -->
+          <ion-checkbox slot=end mode=ios [(ngModel)]="people" (ionChange)="onChangeBox('people',$event)"></ion-checkbox>
+          <div class="blob">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" id="blobSvg">
+              <defs>
+                <linearGradient id="gradient1" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color: #1FA2FF;"></stop>
+                  <stop offset="100%" style="stop-color:#A6FFCB;"></stop>
+                </linearGradient>
+              </defs>
+              <path id="blob" d="M419,299Q402,348,369,393.5Q336,439,277.5,451.5Q219,464,176,424.5Q133,385,104,343Q75,301,47,241.5Q19,182,64,134.5Q109,87,164.5,65Q220,43,282.5,43Q345,43,382.5,92Q420,141,428,195.5Q436,250,419,299Z" fill="url(#gradient1)"></path>
+            </svg>
+          </div>
+        </ion-item>
+        <ion-card-content style="padding-left: 1px;" class=" mt-2 ">
+          <div *ngFor="let i of vs.sm.value">
+            <div style="border-color: #1FA2FF;" class="list_ent mb-2 mt-2 pl-3 pd-4 shadow-sm" *ngFor="let i of i.organizations">
+              {{i}}
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+      <ion-card style="overflow-x: hidden;" class=" bg-light shadow entries scroll1 vert">
+        <ion-item class="d-flex ent_head">
+          <h3 class="heading">Organizations</h3>
+          <!-- <ion-icon size="large" color="light" class=" icon float-right" name="briefcase-outline"></ion-icon> -->
+          <ion-checkbox slot=end mode=ios [(ngModel)]="org" (ionChange)="onChangeBox('org',$event)"></ion-checkbox>
+
+          <div class="blob">
+            <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" width="100%" id="blobSvg">
+              <defs>
+                <linearGradient id="gradient5" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style="stop-color: #78ffd6;"></stop>
+                  <stop offset="100%" style="stop-color:#a8ff78;"></stop>
+                </linearGradient>
+              </defs>
+              <path id="blob"
+                d="M419,299Q402,348,369,393.5Q336,439,277.5,451.5Q219,464,176,424.5Q133,385,104,343Q75,301,47,241.5Q19,182,64,134.5Q109,87,164.5,65Q220,43,282.5,43Q345,43,382.5,92Q420,141,428,195.5Q436,250,419,299Z"
+                fill="url(#gradient5)"></path>
+            </svg>
+          </div>
+        </ion-item>
+        <ion-card-content style="padding-left: 1px;" class="mt-2 ">
+          <div *ngFor="let i of vs.sm.value">
+            <div style="border-color: #78ffd6;" class="list_ent mb-2 mt-2 pl-3 pd-4 shadow-sm" *ngFor="let i of i.people">
+              {{i}}
+            </div>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <div class="col col-8">
+
+      <ion-card [id]="p" *ngFor="let i of vs.sm.value;let p=index" class="shadow newsCard">
+
+        <ion-card-header class="header">
+          <ion-checkbox mode=ios [value]="p" (ionChange)="onChangeSelectiin($event)"></ion-checkbox>
+
+          <div class=score>Score: {{i['@search.score']}}</div>
+          <div class="" style="display: block; margin: auto;text-align: center;">
+            <ui-switch checkedTextColor="#fff" color="#6C63FF" class="ui" [(ngModel)]="lang" (change)="onChange($event)"
+              uncheckedLabel="English" checkedLabel="Romanian">
+            </ui-switch>
+          </div>
+        </ion-card-header>
+        <ion-card-content>
+
+          <read-more [id]="p.toString()" [availableIds]="searchableArray" [type]="choosenType" [search]=findQuery [text]="!lang?i.translated_text:i.content"
+            [maxHeight]="100"></read-more>
+
+
+          <h4>KeyPhrases</h4>
+
+          <div class=" shadow-sm scroll scroll1 chip_wrapper" style="display: block;">
+            <ion-chip class="key" *ngFor="let i of i.keyphrases" color="primary">
+              <ion-label color="light">{{i}}</ion-label>
+            </ion-chip>
+          </div>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
+</div>
+<footer style="width: 100%;z-index: -99; height: 30%; position: relative; bottom: 0; background: url('assets/ct.svg');background-position: bottom;
+background-size: contain;">
+
+</footer>

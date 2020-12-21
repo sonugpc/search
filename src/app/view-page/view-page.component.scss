@@ -1,0 +1,228 @@
+.navbar{
+    background: #ee0979;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #ff6a00, #ee0979) !important;  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #ff6a00, #ee0979) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.lot{
+  display: contents;
+  text-align: center;
+}
+.center{
+  margin: auto;
+  transition: all 0.1s;
+    margin-top: 113px;
+  width: 60%;
+    height: 40%;
+//     position: relative;
+//     /* text-align: center; */
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+}
+body{
+    background-color: rgb(231, 0, 0);
+}
+.item1{
+    --background: #fff;
+    --border-radius: 30px;
+}
+
+.ripple-parent {
+    position: relative;
+    overflow: hidden;
+  }
+  .entries{
+    border-radius: 5px;
+    padding-left: 9px;
+    min-height: 20vh;
+    overflow-y: auto;
+    height: 25vh;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+  .newsCard{
+     //   background: #fff;
+     position: relative;
+
+  }
+  ion-card{
+      --background:#fff;
+  }
+  .score{
+    position: absolute;
+    color: #fff;
+    left: 0;
+    top: 0;
+    padding: 7px;
+    background: #396afc;
+    background: -webkit-linear-gradient(to right, #2948ff, #396afc);
+    background: linear-gradient(to right, #2948ff, #396afc);
+    border-bottom-right-radius: 12px;
+  }
+  .chip_wrapper{
+    // overflow: auto;
+    // white-space: nowrap;
+    // background: var(--ion-color-primary-contrast)
+}
+.org{
+    background-image: linear-gradient(62deg, #fbab7ed9 0%, #f7ce689e 100%);
+}
+.key{
+  background: var(--ion-color-primary); 
+    }
+
+
+    ion-label{
+        --color	:#fff;
+    }
+    .chip_wrapper{
+    white-space: nowrap;
+            overflow-x: auto;
+}
+
+  .scroll1::-webkit-scrollbar {
+    height: 5px;
+
+  }
+  .vert::-webkit-scrollbar {
+    width: 5px;
+    border-radius: 20px;
+
+  }
+  .scroll1::-webkit-scrollbar-track {
+    background: #ddd;
+  }
+   
+  .scroll1::-webkit-scrollbar-thumb {
+    background: #666; 
+    border-radius: 20px;
+
+  }
+  .header{
+    margin-bottom: 20px;
+  }
+  .ui{
+    margin: auto;
+    position: absolute;
+    text-align: center;
+    right: 0;
+    top: 0;
+    margin-right: 15px;
+    margin-top: 5px;
+  }
+  ui-switch.switch.checked {
+    background: #8172ff !important;
+    color: #fff !important;
+}
+.ent_head{
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  background: #fff;
+  z-index: 99;
+  height: 30%;
+  //border-left: 4px solid var(--ion-color-primary);
+  margin-left:-9px;
+  border-bottom: 1px solid #0e0c0c1f;
+ 
+}
+.icon{
+    position: absolute;
+    right: 0;
+    margin: auto;
+    margin-right: 10px;
+    margin-top: -9px;
+
+}
+
+.read{
+  display: block;
+  text-align: center;
+}
+
+.list_ent{
+  border-left: 2px solid var(--ion-color-tertiary);
+ // border-radius: 5px;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  padding-left: 2px!important;
+  margin: auto;
+}
+.heading{
+  margin-top: 6px;
+  line-height: 0;
+  margin-left: 7px;
+}
+///////////////Blob CSS//////////
+
+
+.blob-svg {
+will-change: transform;
+position: absolute;
+right: -301px;
+top: -288px;
+
+}
+
+.circle1 {
+ animation: from0to360 10s linear infinite;
+  cx: 150;
+  cy: 145;
+  r: 100;
+  fill: white;
+  transform-origin: 145px 150px;
+}
+.circle2 {
+  animation: from360to0 20s linear infinite;
+  cx: 150;
+  cy: 155;
+  r: 100;
+  fill: white;
+  transform-origin: 160px 150px;
+}
+
+.circle3 {
+  animation: from0to360 30s linear infinite alternate;
+  cx: 145;
+  cy: 150;
+  r: 100;
+  fill: white;
+  transform-origin: 150px 145px;
+}
+
+.circle4 {
+  animation: from360to0 25s linear infinite;
+  cx: 155;
+  cy: 150;
+  r: 100;
+  fill: white;
+  transform-origin: 150px 155px;
+}
+
+.ellipse1 {
+  animation: from360to0scaled 20s linear infinite alternate;
+  rx: 120;
+  ry: 100;
+  cx: 150;
+  cy: 150;
+  fill: white;
+  transform-origin: 130px 155px;
+}
+.ellipse2 {
+  animation: from0to360 15s linear infinite;
+  rx: 120;
+  ry: 100;
+  cx: 150;
+  cy: 150;
+  fill: white;
+  transform-origin: 150px 155px;
+}
+.blob{
+  position: absolute;
+  top: -60px;
+  right: -205px;
+  z-index: -99;
+}

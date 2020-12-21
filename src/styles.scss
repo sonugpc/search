@@ -1,0 +1,107 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+@import '~ngx-ui-switch/ui-switch.component.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
+.sbm{
+    background: #8E2DE2;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #4A00E0, #8E2DE2); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+:root{
+    --ion-color-primary:#05ade0;
+    --ion-background-color:rgba(46, 26, 26, 0);
+    --ion-background:#ede8f6;
+   
+    font-family: 'Roboto', sans-serif;
+    --color:#111;
+    --ion-text-color: #122;
+    --ion-color-tertiary:#5260ff;
+    //background: url('assets/A.png');
+    background: lightgray;
+
+    background-image: url('https://www.bigtricks.in/wp-content/uploads/2020/09/abs1.png');
+    // background-position: left;
+   background-size: cover;
+    
+
+}
+
+
+.keyBox{
+    min-height: 50px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 2.9;
+    margin: 5px;
+}
+.bDark{
+ 
+}
+.pos{
+//     color:#fff !important;
+//     background: #11998e;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.neg{
+    // color:#fff !important;
+
+    // background: #FF416C;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #FF4B2B, #FF416C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.neu{
+//     color:#fff !important;
+//     background: #141E30;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+.butn{
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    width: 75px;
+    height: 40px;
+}
+.btn:hover{
+    outline: none;
+
+}
+.head{
+    background-color: antiquewhite;
+    line-height: 1.4;
+    height: 50px;
+    margin: auto;
+    padding: 10px;
+}
+.cls{
+    background: #ee0979;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ff6a00, #ee0979) !important;  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ff6a00, #ee0979) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+
+.loc{
+    background: #fc4b1ad2;  /* fallback for old browsers */
+    color:#fff;
+    // background: -webkit-linear-gradient(to right, #f7b733, #fc4a1a);  /* Chrome 10-25, Safari 5.1-6 */
+    //background: linear-gradient(to right, #f7b733, #fc4a1a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
+.people{
+    background: #1fa2ff9c;  /* fallback for old browsers */
+
+}
+.org{
+    background: #a8ff78;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #78ffd6, #a8ff78);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #78ffd6, #a8ff78); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+}
